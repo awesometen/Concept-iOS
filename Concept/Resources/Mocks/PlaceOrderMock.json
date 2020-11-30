@@ -1,0 +1,10 @@
+{
+  "expectedDeliveryTime": "45 mins",
+  "trackingDetails": [
+    {
+      "latitude": "109.22",
+      "longitude": "98.0"
+    }
+  ],
+  "paymentMode": "cash"
+}

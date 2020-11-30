@@ -1,0 +1,184 @@
+{
+  "subMenus": "Pizza, Suzhi, Drinks",
+  "foodMenu": [
+    {
+      "category": "Pizza",
+      "menuItems": [
+        {
+          "dishName": "Cheeseee",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/dsaf23"
+        },
+        {
+          "dishName": "Pan Cheese",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Pepornii",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Veg Extravenza",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Chicken feast",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "South East",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Italiana",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Mexican",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Uncle's Sams",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Double Delight",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        }
+      ],
+      "available": true
+    },
+    {
+      "category": "Suzhi",
+      "menuItems": [
+        {
+          "dishName": "Cheeseee",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/dsaf23"
+        },
+        {
+          "dishName": "Pan Cheese",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Pepornii",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Veg Extravenza",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Chicken feast",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "South East",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Italiana",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Mexican",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Uncle's Sams",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Double Delight",
+          "receipe": "Onion, tomato, cheese",
+          "price": 10,
+          "type": "pizza, crust, pan",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        }
+      ],
+      "available": true
+    },
+    {
+      "category": "Drinks",
+      "menuItems": [
+        {
+          "dishName": "Coke",
+          "receipe": "Soda",
+          "price": 10,
+          "type": "drink",
+          "thumbnailImage": "http://i.imgur.com/dsaf23"
+        },
+        {
+          "dishName": "Pepsi",
+          "receipe": "Soda",
+          "price": 10,
+          "type": "drink",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        },
+        {
+          "dishName": "Diet Coke",
+          "receipe": "Soda",
+          "price": 10,
+          "type": "drink",
+          "thumbnailImage": "http://i.imgur.com/1adsfd"
+        }
+      ],
+      "available": true
+    }
+  ]
+}

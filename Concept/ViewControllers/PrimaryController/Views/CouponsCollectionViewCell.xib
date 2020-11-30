@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CouponsCollectionViewCell" id="gTV-IL-0wX" customClass="CouponsCollectionViewCell" customModule="Concept" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="329" height="244"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="329" height="244"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7n-L7-Tvn">
+                        <rect key="frame" x="0.0" y="0.0" width="329" height="244"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CouponsBackgroundCell" translatesAutoresizingMaskIntoConstraints="NO" id="3tJ-iW-zhG">
+                                <rect key="frame" x="0.0" y="0.0" width="329" height="244"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00A-0v-No6" customClass="CouptonTitleLabel" customModule="Concept" customModuleProvider="target">
+                                <rect key="frame" x="143.5" y="87" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNc-Vc-2Hg" customClass="CouptonSubTitleLabel" customModule="Concept" customModuleProvider="target">
+                                <rect key="frame" x="143.5" y="111.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="329" id="4do-pM-Oyt"/>
+                            <constraint firstItem="qNc-Vc-2Hg" firstAttribute="centerY" secondItem="p7n-L7-Tvn" secondAttribute="centerY" id="Bdf-rZ-HOz"/>
+                            <constraint firstItem="3tJ-iW-zhG" firstAttribute="leading" secondItem="p7n-L7-Tvn" secondAttribute="leading" priority="999" id="C3l-zK-Aew"/>
+                            <constraint firstItem="qNc-Vc-2Hg" firstAttribute="centerX" secondItem="p7n-L7-Tvn" secondAttribute="centerX" id="EAy-1M-2jd"/>
+                            <constraint firstItem="00A-0v-No6" firstAttribute="centerY" secondItem="p7n-L7-Tvn" secondAttribute="centerY" multiplier="0.8" id="OI7-Z1-Mel"/>
+                            <constraint firstItem="00A-0v-No6" firstAttribute="centerX" secondItem="p7n-L7-Tvn" secondAttribute="centerX" id="OQI-XR-n2W"/>
+                            <constraint firstItem="3tJ-iW-zhG" firstAttribute="top" secondItem="p7n-L7-Tvn" secondAttribute="top" priority="999" id="WqS-Sy-Y96"/>
+                            <constraint firstAttribute="bottom" secondItem="3tJ-iW-zhG" secondAttribute="bottom" priority="999" id="gCG-OZ-IFf"/>
+                            <constraint firstAttribute="trailing" secondItem="3tJ-iW-zhG" secondAttribute="trailing" priority="999" id="jP8-Bd-KT4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="p7n-L7-Tvn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5jK-th-nbg"/>
+                <constraint firstAttribute="trailing" secondItem="p7n-L7-Tvn" secondAttribute="trailing" id="Bp6-gB-Hh4"/>
+                <constraint firstItem="p7n-L7-Tvn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LPh-1N-8c3"/>
+                <constraint firstAttribute="bottom" secondItem="p7n-L7-Tvn" secondAttribute="bottom" id="zyA-DS-99G"/>
+            </constraints>
+            <size key="customSize" width="329" height="244"/>
+            <connections>
+                <outlet property="parentView" destination="p7n-L7-Tvn" id="kT5-cT-u5f"/>
+                <outlet property="parentViewWidth" destination="4do-pM-Oyt" id="FKz-8K-0lh"/>
+                <outlet property="subTitleLabel" destination="qNc-Vc-2Hg" id="MeW-fb-9JK"/>
+                <outlet property="thumbView" destination="3tJ-iW-zhG" id="LYK-eI-f3u"/>
+                <outlet property="titleLabel" destination="00A-0v-No6" id="9mq-Ue-n0q"/>
+            </connections>
+            <point key="canvasLocation" x="255.79710144927537" y="166.74107142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="CouponsBackgroundCell" width="806.5" height="960"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

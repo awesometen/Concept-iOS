@@ -1,0 +1,48 @@
+{
+  "expirationDate": "2020-11-28T05:03:48.243Z",
+  "areaCode": 0,
+  "coupons": [
+    {
+      "title": "Monday Discount",
+      "subTitle": "Get good deals on your Mondays",
+      "thumbnail": "http://i.imgur.com/sd20Yd",
+      "code": "MONDAY"
+    },
+    {
+      "title": "Tuesday Discount",
+      "subTitle": "Get good deals on your Tuesday",
+      "thumbnail": "http://i.imgur.com/aTjJ2B",
+      "code": "TUESDAY"
+    },
+    {
+      "title": "Wednesday Discount",
+      "subTitle": "Get good deals on your Wednesday",
+      "thumbnail": "http://i.imgur.com/asdA2da",
+      "code": "WEDNESDAY"
+    },
+    {
+      "title": "Thursday Discount",
+      "subTitle": "Get good deals on your Thursday",
+      "thumbnail": "http://i.imgur.com/Xj2h22",
+      "code": "THURSDAY"
+    },
+    {
+      "title": "Friday Discount",
+      "subTitle": "Get good deals on your Friday",
+      "thumbnail": "http://i.imgur.com/K2hiGs",
+      "code": "FRIDAY"
+    },
+    {
+      "title": "Saturday Discount",
+      "subTitle": "Get good deals on your Saturday",
+      "thumbnail": "http://i.imgur.com/sd20Yd",
+      "code": "SATURDAY"
+    },
+    {
+      "title": "Sunday Discount",
+      "subTitle": "Get good deals on your Sunday",
+      "thumbnail": "http://i.imgur.com/sd20Yd",
+      "code": "SUNDAY"
+    }
+  ]
+}
