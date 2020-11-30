@@ -20,7 +20,7 @@ class MenuCollectionSubCollectionViewCell: UICollectionViewCell, GenericHeightCe
   @IBOutlet weak var itemName: UILabel!
   @IBOutlet weak var receipeListLabel: UILabel!
   @IBOutlet weak var quantityLabel: UILabel!
-  @IBOutlet weak var addButton: UIButton!
+  @IBOutlet weak var addButton: BuyButton!
   @IBOutlet weak var thumbnailImage: UIImageView!
   @IBOutlet weak var parentContentView: ShadowedTileView!
   
@@ -33,6 +33,9 @@ class MenuCollectionSubCollectionViewCell: UICollectionViewCell, GenericHeightCe
   func configure(with cellModel: MenuCollectionSubCollectionViewCellInterface) {
     itemName.text = cellModel.menu.dishName
     receipeListLabel.text = cellModel.menu.receipe
-    quantityLabel.text = cellModel.menu.price?.description
+    quantityLabel.text = "100 grams"
+    guard let doublePrice = cellModel.menu.price else { return }
+    let price = String(format: "%.2f usd", doublePrice)
+    addButton.setTitle(price, for: .normal)
   }
 }

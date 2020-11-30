@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol MenuContentCollectionViewCellInterface {
   var menuItems: [MenuItems] { get }
@@ -17,54 +19,35 @@ struct MenuContentCollectionViewCellModel: MenuContentCollectionViewCellInterfac
 
 class MenuContentCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   
+  @IBOutlet private weak var collectionViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet private weak var collectionView: UICollectionView! {
     didSet {
-      collectionView.delegate = self
-      collectionView.dataSource = self
       collectionView.registerReusableCell(cellType: MenuCollectionSubCollectionViewCell.self)
-      collectionView.contentInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+      collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+      let layout = UICollectionViewFlowLayout()
+      layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 450)
+      layout.scrollDirection = .vertical
+      collectionView.collectionViewLayout = layout
+      collectionView.isScrollEnabled = false
     }
   }
-  @IBOutlet private weak var collectionViewHeightConstraint: NSLayoutConstraint!
   
-  //MARK: Private properties
-  private var cellModel: MenuContentCollectionViewCellInterface?
-  
+  //MARK: Lifecycle methods
   override func awakeFromNib() {
     super.awakeFromNib()
-  }
-  
-  func configure(with cellModel: MenuContentCollectionViewCellInterface) {
-    self.cellModel = cellModel
-    collectionView.reloadData()
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
     collectionViewHeightConstraint.constant = collectionView.contentSize.height
   }
-}
-
-
-extension MenuContentCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell: MenuCollectionSubCollectionViewCell = collectionView.dequeueReusableCell(indexPath)
-    guard let menu = cellModel?.menuItems[indexPath.section] else { return cell }
-    let model = MenuCollectionSubCollectionViewCellModel(menu: menu)
-    cell.configure(with: model)
-    return cell
-  }
   
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return cellModel?.menuItems.count ?? 0
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 1
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: UIScreen.main.bounds.width, height: 450)
+  //MARK: Public properties
+  func configure(with cellModel: MenuContentCollectionViewCellInterface) {
+    collectionView.reloadData()
+    let items = Observable.just(cellModel.menuItems)
+    let _ = items.bind(to: collectionView.rx.items(cellIdentifier: "MenuCollectionSubCollectionViewCell", cellType: MenuCollectionSubCollectionViewCell.self)) { (row, element, cell) in
+      cell.configure(with: MenuCollectionSubCollectionViewCellModel(menu: element))
+    }
   }
 }
-

@@ -45,10 +45,6 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="8k5-DO-IQw" id="oXT-it-O41"/>
-                                    <outlet property="delegate" destination="8k5-DO-IQw" id="GKi-LB-bFs"/>
-                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kozaro Delivery" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id9-GB-rVh">
                                 <rect key="frame" x="162" y="72" width="90" height="51"/>
@@ -88,9 +84,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-Ga-HBM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Zd-GX-ERp">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5Zd-GX-ERp">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -104,7 +100,7 @@
                         <constraints>
                             <constraint firstItem="NsX-Ga-HBM" firstAttribute="top" secondItem="u2W-Ll-IeA" secondAttribute="top" id="HvG-bT-LWb"/>
                             <constraint firstItem="NsX-Ga-HBM" firstAttribute="leading" secondItem="Dvj-a6-aZL" secondAttribute="leading" id="VZA-TF-ze5"/>
-                            <constraint firstItem="Dvj-a6-aZL" firstAttribute="bottom" secondItem="NsX-Ga-HBM" secondAttribute="bottom" id="cIS-Fk-sKY"/>
+                            <constraint firstAttribute="bottom" secondItem="NsX-Ga-HBM" secondAttribute="bottom" id="cIS-Fk-sKY"/>
                             <constraint firstItem="Dvj-a6-aZL" firstAttribute="trailing" secondItem="NsX-Ga-HBM" secondAttribute="trailing" id="xI4-fy-tWE"/>
                         </constraints>
                     </view>

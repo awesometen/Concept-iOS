@@ -46,9 +46,10 @@ final class CouptonSubTitleLabel: ConceptLabel {
 final class BorderedLabel: ConceptLabel {
   override func setup() {
     textColor = .black
-    font = UIFont.systemFont(ofSize: 20.0)
-    layer.borderWidth = 2.0
+    font = UIFont.systemFont(ofSize: 16.0)
+    layer.borderWidth = 1.0
     layer.borderColor = UIColor.lightGray.cgColor
     layer.cornerRadius = frame.height/2
+    
   }
 }

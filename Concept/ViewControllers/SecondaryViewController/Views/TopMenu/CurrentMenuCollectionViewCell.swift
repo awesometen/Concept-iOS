@@ -2,10 +2,11 @@
 //  CurrentMenuCollectionViewCell.swift
 //  Concept
 //
-//  Created by awesomej on 28/11/20.
+//  Created by Vijay Jayapal on 28/11/20.
 //
 
 import UIKit
+import RxSwift
 
 protocol CurrentMenuCollectionViewCellInterface {
   var categoryMenu: [String] { get }
@@ -17,49 +18,31 @@ struct CurrentMenuCollectionViewCellModel: CurrentMenuCollectionViewCellInterfac
   var selectedItem: String
 }
 
-
 class CurrentMenuCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   
   @IBOutlet private weak var collectionView: UICollectionView! {
     didSet {
-      collectionView.delegate = self
-      collectionView.dataSource = self
       collectionView.registerReusableCell(cellType: CurrentMenuSubCollectionViewCell.self)
+      let layout = UICollectionViewFlowLayout()
+      layout.itemSize = CGSize(width: UIScreen.main.bounds.width/3, height: 80)
+      layout.scrollDirection = .horizontal
+      collectionView.collectionViewLayout = layout
+      collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
     }
   }
   
-  //MARK: Private properties
-  private var cellModel: CurrentMenuCollectionViewCellInterface?
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    collectionView.dataSource = nil
   }
   
+  //MARK: Public properties
   func configure(with cellModel: CurrentMenuCollectionViewCellInterface) {
-    self.cellModel = cellModel
     collectionView.reloadData()
-  }
-}
-
-extension CurrentMenuCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell: CurrentMenuSubCollectionViewCell = collectionView.dequeueReusableCell(indexPath)
-    guard let category = cellModel?.categoryMenu[indexPath.section] else { return cell }
-    let model = CurrentMenuSubCollectionViewCellModel(title: category, isSelected: category == cellModel?.selectedItem)
-    cell.configure(with: model)
-    return cell
-  }
-  
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return cellModel?.categoryMenu.count ?? 0
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 1
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: UIScreen.main.bounds.width/3, height: 70)
+    let items = Observable.just(cellModel.categoryMenu)
+    let _ = items.bind(to: collectionView.rx.items(cellIdentifier: "CurrentMenuSubCollectionViewCell", cellType: CurrentMenuSubCollectionViewCell.self)) {
+      (_, element, cell) in
+      cell.configure(with: CurrentMenuSubCollectionViewCellModel(title: element, isSelected: cellModel.selectedItem == element))
+    }
   }
 }

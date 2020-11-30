@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol MenuFiltersCollectionViewCellInterfaces {
   var availableFilter: [String]? { get }
@@ -19,12 +20,15 @@ class MenuFiltersCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   
   @IBOutlet private weak var collectionView: UICollectionView! {
     didSet {
-      collectionView.delegate = self
-      collectionView.dataSource = self
       collectionView.registerReusableCell(cellType: MenuFiltersSubCollectionViewCell.self)
+      let layout = UICollectionViewFlowLayout()
+      layout.itemSize = CGSize(width: 140, height: 46)
+      layout.minimumInteritemSpacing = 2
+      layout.scrollDirection = .vertical
+      collectionView.collectionViewLayout = layout
     }
   }
-  
+
   //MARK: Private Properties
   private var cellModel: MenuFiltersCollectionViewCellInterfaces?
   
@@ -32,30 +36,19 @@ class MenuFiltersCollectionViewCell: UICollectionViewCell, GenericHeightCell {
     super.awakeFromNib()
   }
   
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    collectionView.dataSource = nil
+  }
+  
+  //MARK: Public methods
   func configure(with cellModel: MenuFiltersCollectionViewCellInterfaces) {
     self.cellModel = cellModel
     collectionView.reloadData()
-  }
-}
-
-extension MenuFiltersCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell: MenuFiltersSubCollectionViewCell = collectionView.dequeueReusableCell(indexPath)
-    guard let filter = cellModel?.availableFilter?[indexPath.section] else { return cell }
-    let model = MenuFiltersSubCollectionViewCellModel(title: filter, isSelected: false)
-    cell.configure(with: model)
-    return cell
-  }
-  
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return cellModel?.availableFilter?.count ?? 0
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 1
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 120, height: 46)
+    guard let filters = self.cellModel?.availableFilter else { return }
+    let items = Observable.just(filters)
+    let dispose = items.bind(to: collectionView.rx.items(cellIdentifier: "MenuFiltersSubCollectionViewCell", cellType: MenuFiltersSubCollectionViewCell.self)) { (row, element, cell) in
+      cell.configure(with: MenuFiltersSubCollectionViewCellModel(title: element, isSelected: false))
+    }
   }
 }

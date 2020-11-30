@@ -7,6 +7,8 @@
 
 import Foundation
 import ObjectMapper
+import RxSwift
+import RxCocoa
 
 struct MenuListResponse: Mappable {
   

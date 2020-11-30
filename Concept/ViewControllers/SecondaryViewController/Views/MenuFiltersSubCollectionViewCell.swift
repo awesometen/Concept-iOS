@@ -24,6 +24,7 @@ class MenuFiltersSubCollectionViewCell: UICollectionViewCell, GenericHeightCell 
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    filterLabel.textColor = .lightGray
   }
   
   func configure(with cellModel: MenuFiltersSubCollectionViewCellInterface) {

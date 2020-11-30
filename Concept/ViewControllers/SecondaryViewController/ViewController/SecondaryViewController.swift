@@ -18,6 +18,8 @@ class SecondaryViewController: UIViewController {
       mainMenuCollectionView.registerReusableCell(cellType: MenuContentCollectionViewCell.self)
       mainMenuCollectionView.dataSource = self
       mainMenuCollectionView.delegate = self
+      mainMenuCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+      mainMenuCollectionView.isScrollEnabled = true
     }
   }
   
@@ -94,7 +96,6 @@ extension SecondaryViewController: UICollectionViewDelegateFlowLayout {
 
 
 extension SecondaryViewController: UIScrollViewDelegate {
-  
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
     if translation.y > 0 {
@@ -103,6 +104,9 @@ extension SecondaryViewController: UIScrollViewDelegate {
       print("up up")
       presenter?.baseDelegate?.updatePulley(position: .open)      
     }
+  }
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    print("did scorll")
   }
 }
 
@@ -120,19 +124,15 @@ extension SecondaryViewController: PulleyDrawerViewControllerDelegate {
     return [.partiallyRevealed, .open]
   }
   
-  func drawerDisplayModeDidChange(drawer: PulleyViewController) {
-    
-  }
-  
   func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
-    
+    print(bottomSafeArea)
+    if drawer.drawerPosition == .open {
+      
+      
+    }
   }
   
   func makeUIAdjustmentsForFullscreen(progress: CGFloat, bottomSafeArea: CGFloat) {
-
-  }
-  
-  func drawerChangedDistanceFromBottom(drawer: PulleyViewController, distance: CGFloat, bottomSafeArea: CGFloat) {
-    
+    print(bottomSafeArea)
   }
 }

@@ -30,7 +30,7 @@ class BaseViewRouter: BasePresenterToRouter {
     viewController.setPrimaryContentViewController(controller: primaryController)
     viewController.setDrawerContentViewController(controller: secondaryController)
     viewController?.delegate = secondaryController
-    viewController.drawerTopInset = -((viewController?.drawerTopInset ?? 0) + 22)
+    viewController.drawerTopInset = -((viewController?.drawerTopInset ?? 0) + 26)
     return viewController 
   }
   
