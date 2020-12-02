@@ -18,6 +18,11 @@ struct CurrentMenuCollectionViewCellModel: CurrentMenuCollectionViewCellInterfac
   var selectedItem: String
 }
 
+
+private extension String {
+  static let cellIdentifier = "CurrentMenuSubCollectionViewCell"
+}
+
 class CurrentMenuCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   
   @IBOutlet private weak var collectionView: UICollectionView! {
@@ -27,7 +32,7 @@ class CurrentMenuCollectionViewCell: UICollectionViewCell, GenericHeightCell {
       layout.itemSize = CGSize(width: UIScreen.main.bounds.width/3, height: 80)
       layout.scrollDirection = .horizontal
       collectionView.collectionViewLayout = layout
-      collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+      collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
   }
   
@@ -39,9 +44,10 @@ class CurrentMenuCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   //MARK: Public properties
   func configure(with cellModel: CurrentMenuCollectionViewCellInterface) {
     collectionView.reloadData()
-    let items = Observable.just(cellModel.categoryMenu)
-    let _ = items.bind(to: collectionView.rx.items(cellIdentifier: "CurrentMenuSubCollectionViewCell", cellType: CurrentMenuSubCollectionViewCell.self)) {
-      (_, element, cell) in
+    var sorted = cellModel.categoryMenu.filter{ $0 != cellModel.selectedItem }
+    sorted.insert(cellModel.selectedItem, at: 0)
+    let items = Observable.just(sorted)
+    let _ = items.bind(to: collectionView.rx.items(cellIdentifier: .cellIdentifier, cellType: CurrentMenuSubCollectionViewCell.self)) { (_, element, cell) in
       cell.configure(with: CurrentMenuSubCollectionViewCellModel(title: element, isSelected: cellModel.selectedItem == element))
     }
   }

@@ -17,13 +17,21 @@ class PrimaryViewController: UIViewController {
   @IBOutlet private weak var collectionView: UICollectionView! {
     didSet {
       collectionView.registerReusableCell(cellType: CouponsCollectionViewCell.self)
-      let layout = UICollectionViewFlowLayout()
-      layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2)
+      let layout = CollectionCustomLayout(CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2))
       layout.scrollDirection = .horizontal
+      layout.minimumLineSpacing = 0
+      layout.minimumInteritemSpacing = 0
       collectionView.collectionViewLayout = layout
+      collectionView.isPagingEnabled = true
+      collectionView.delegate = self
     }
   }
   @IBOutlet private weak var collectionViewHeight: NSLayoutConstraint!
+  @IBOutlet private weak var pageControl: UIPageControl! {
+    didSet {
+      pageControl.currentPageIndicatorTintColor = UIColor.white
+    }
+  }
   
   //MARK: Public properties
   var presenter: PrimaryControllerViewToPresenter?
@@ -31,8 +39,7 @@ class PrimaryViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     collectionViewHeight.constant = UIScreen.main.bounds.height / 2
-    collectionView.isPagingEnabled = true
-    view.backgroundColor = .red
+    view.backgroundColor = .darkGray
     presenter?.fetchOffersList()
   }
 }
@@ -40,6 +47,7 @@ class PrimaryViewController: UIViewController {
 extension PrimaryViewController: PrimaryControllerPresenterToView {
   func offerList(array: CouponListResponse) {
     guard let list = array.coupons else { return }
+    pageControl.numberOfPages = list.count
     let items = Observable.just(list)
     let _ = items.bind(to: collectionView.rx.items(cellIdentifier: reuseIdentifier, cellType: CouponsCollectionViewCell.self)) {
       (row, element, cell) in
@@ -49,5 +57,14 @@ extension PrimaryViewController: PrimaryControllerPresenterToView {
   
   func onError(_ error: Error) {
     
+  }
+}
+
+
+extension PrimaryViewController: UICollectionViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let currentPage = collectionView.contentOffset.x / UIScreen.main.bounds.width
+    print(currentPage)
+    pageControl.currentPage = Int(currentPage)
   }
 }

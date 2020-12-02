@@ -32,10 +32,13 @@ class MenuCollectionSubCollectionViewCell: UICollectionViewCell, GenericHeightCe
   
   func configure(with cellModel: MenuCollectionSubCollectionViewCellInterface) {
     itemName.text = cellModel.menu.dishName
-    receipeListLabel.text = cellModel.menu.receipe
-    quantityLabel.text = "100 grams"
+    receipeListLabel.text = cellModel.menu.type
+    quantityLabel.text = "Medium"
     guard let doublePrice = cellModel.menu.price else { return }
     let price = String(format: "%.2f usd", doublePrice)
     addButton.setTitle(price, for: .normal)
+    thumbnailImage.loadImageFromUrl(imageUrl: cellModel.menu.thumbnailImage ?? "") { [weak self] (image) in
+      self?.thumbnailImage.image = image
+    }
   }
 }

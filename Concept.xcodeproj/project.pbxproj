@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A408F0E25752D420014B242 /* MainContentHolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A408F0C25752D420014B242 /* MainContentHolderCollectionViewCell.swift */; };
+		6A408F0F25752D420014B242 /* MainContentHolderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A408F0D25752D420014B242 /* MainContentHolderCollectionViewCell.xib */; };
+		6A408F29257783FC0014B242 /* CollectionCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A408F28257783FC0014B242 /* CollectionCustomLayout.swift */; };
 		6A89E1B02572A8BB00AAB645 /* ConceptLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A89E1AF2572A8BB00AAB645 /* ConceptLabel.swift */; };
 		6A89E1B62572A9FF00AAB645 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A89E1B52572A9FF00AAB645 /* UIImageView+Extension.swift */; };
 		6A89E1BB2572B63F00AAB645 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A89E1BA2572B63F00AAB645 /* UICollectionView+Extension.swift */; };
@@ -82,6 +85,9 @@
 /* Begin PBXFileReference section */
 		1EA24888879EF182D46BCE5C /* Pods_ConceptTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConceptTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F142FCBD8B8547F4889D33D /* Pods-Concept.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concept.debug.xcconfig"; path = "Target Support Files/Pods-Concept/Pods-Concept.debug.xcconfig"; sourceTree = "<group>"; };
+		6A408F0C25752D420014B242 /* MainContentHolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentHolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		6A408F0D25752D420014B242 /* MainContentHolderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainContentHolderCollectionViewCell.xib; sourceTree = "<group>"; };
+		6A408F28257783FC0014B242 /* CollectionCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCustomLayout.swift; sourceTree = "<group>"; };
 		6A89E1AF2572A8BB00AAB645 /* ConceptLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptLabel.swift; sourceTree = "<group>"; };
 		6A89E1B52572A9FF00AAB645 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		6A89E1BA2572B63F00AAB645 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -198,11 +204,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6A408F0B25752D200014B242 /* MainContentHolder */ = {
+			isa = PBXGroup;
+			children = (
+				6A408F0C25752D420014B242 /* MainContentHolderCollectionViewCell.swift */,
+				6A408F0D25752D420014B242 /* MainContentHolderCollectionViewCell.xib */,
+			);
+			path = MainContentHolder;
+			sourceTree = "<group>";
+		};
 		6A89E1AE2572A8AA00AAB645 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
 				6A89E1BF2572B6A700AAB645 /* Reusable.swift */,
 				6A89E1AF2572A8BB00AAB645 /* ConceptLabel.swift */,
+				6A408F28257783FC0014B242 /* CollectionCustomLayout.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -223,6 +239,7 @@
 		6A89E1D32572BEBE00AAB645 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6A408F0B25752D200014B242 /* MainContentHolder */,
 				6AC0A35F2572DB14008B76FA /* MainMenu */,
 				6AC0A3502572D5DD008B76FA /* FilterMenu */,
 				6AC0A34F2572D5CC008B76FA /* TopMenu */,
@@ -619,6 +636,7 @@
 				6AB9A2FC2572122D00C60932 /* MenuListMock.json in Resources */,
 				6AB9A26D256FDC9D00C60932 /* Assets.xcassets in Resources */,
 				6AB9A3012572124000C60932 /* PlaceOrderMock.json in Resources */,
+				6A408F0F25752D420014B242 /* MainContentHolderCollectionViewCell.xib in Resources */,
 				6AB9A26B256FDC9800C60932 /* Main.storyboard in Resources */,
 				6AC0A34B2572CAD0008B76FA /* CurrentMenuSubCollectionViewCell.xib in Resources */,
 				6AC0A35B2572D763008B76FA /* MenuFiltersSubCollectionViewCell.xib in Resources */,
@@ -766,11 +784,13 @@
 				6AB9A2E025720B3400C60932 /* APIService.swift in Sources */,
 				6AC0A3872574F53A008B76FA /* UIColor+Extension.swift in Sources */,
 				6AC0A3532572D612008B76FA /* MenuFiltersCollectionViewCell.swift in Sources */,
+				6A408F29257783FC0014B242 /* CollectionCustomLayout.swift in Sources */,
 				6AB9A3652572509300C60932 /* SecondaryViewProtocol.swift in Sources */,
 				6AB9A34D25724D1C00C60932 /* BaseViewRouter.swift in Sources */,
 				6AC0A3622572DB2D008B76FA /* MenuContentCollectionViewCell.swift in Sources */,
 				6A89E1B02572A8BB00AAB645 /* ConceptLabel.swift in Sources */,
 				6AB9A2B5256FDF9700C60932 /* PrimaryPresenter.swift in Sources */,
+				6A408F0E25752D420014B242 /* MainContentHolderCollectionViewCell.swift in Sources */,
 				6AC0A3722573BCCC008B76FA /* UIApplication+Extension.swift in Sources */,
 				6AB9A3752572544A00C60932 /* SecondaryViewInteractor.swift in Sources */,
 				6AB9A36D2572532900C60932 /* SecondaryViewPresenter.swift in Sources */,
@@ -961,17 +981,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M8F6K9NRR8;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = UCVJ9Z823D;
 				INFOPLIST_FILE = Concept/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vj.Concept;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.patient.PatientAccessNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Patient Access New Dev";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -981,17 +1004,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M8F6K9NRR8;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = UCVJ9Z823D;
 				INFOPLIST_FILE = Concept/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vj.Concept;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.patient.PatientAccessNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Patient Access New Dev";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

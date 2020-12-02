@@ -5,180 +5,190 @@
       "category": "Pizza",
       "menuItems": [
         {
-          "dishName": "Cheeseee",
+          "dishName": "Neapolitan Pizza",
           "receipe": "Onion, tomato, cheese",
           "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/dsaf23"
+          "type": "tomatoes, garlic, oregano, and extra virgin olive oil",
+          "thumbnailImage": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-margherita-.jpg"
         },
         {
-          "dishName": "Pan Cheese",
+          "dishName": "Chicago Pizza",
           "receipe": "Onion, tomato, cheese",
           "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "type": "beef, sausage, pepperoni, onion, mushrooms",
+          "thumbnailImage": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-deepdish.jpg"
         },
         {
-          "dishName": "Pepornii",
+          "dishName": "New York-Style Pizza",
           "receipe": "Onion, tomato, cheese",
           "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "type": "tomato sauce and mozzarella cheese",
+          "thumbnailImage": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/flat.jpg"
         },
         {
-          "dishName": "Veg Extravenza",
+          "dishName": "Sicilian Pizza",
           "receipe": "Onion, tomato, cheese",
           "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "type": "tomato, onion, anchovies and herbs",
+          "thumbnailImage": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/rectangle.jpg"
         },
         {
-          "dishName": "Chicken feast",
+          "dishName": "Greek Pizza",
           "receipe": "Onion, tomato, cheese",
           "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "type": "feta cheese, black olives, and red onion",
+          "thumbnailImage": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/onions.jpg"
         },
         {
-          "dishName": "South East",
+          "dishName": "California Pizza",
           "receipe": "Onion, tomato, cheese",
           "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "type": "mustard, ricotta, pate, and red pepper",
+          "thumbnailImage": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-gourmet.jpg"
         },
         {
-          "dishName": "Italiana",
+          "dishName": "Detroit Pizza",
           "receipe": "Onion, tomato, cheese",
           "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "type": "Pepperoni, brick cheese",
+          "thumbnailImage": "https://cdnimg.webstaurantstore.com/uploads/blog/2019/3/blog-types-pizza_in-blog-7.jpg"
         },
         {
-          "dishName": "Mexican",
+          "dishName": "St. Louis Pizza",
           "receipe": "Onion, tomato, cheese",
           "price": 10,
-          "type": "pizza",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
-        },
-        {
-          "dishName": "Uncle's Sams",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
-        },
-        {
-          "dishName": "Double Delight",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "type": "cheddar, Swiss, and provolone cheeses",
+          "thumbnailImage": "https://cdnimg.webstaurantstore.com/uploads/blog/2019/3/blog-types-pizza_in-blog-8.jpg"
         }
       ],
-      "available": true
+      "available": true,
+      "filters": ["Vegan", "Spicy"]
     },
     {
       "category": "Suzhi",
       "menuItems": [
         {
-          "dishName": "Cheeseee",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/dsaf23"
+          "dishName": "Makizushi",
+          "type": "Onion, Chilly",
+          "price": 11.99,
+          "receipe": "pizza, crust, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/01_Sushi.jpg"
         },
         {
-          "dishName": "Pan Cheese",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "dishName": "Gunkan",
+          "type": "Onion, Sprinkle, Spinach",
+          "price": 12.22,
+          "receipe": "pizza, crust, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/02_Sushi.jpg"
         },
         {
-          "dishName": "Pepornii",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "dishName": "Temaki",
+          "type": "Onion rings, bell peper, west side",
+          "price": 14.22,
+          "receipe": "pizza, crust, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/03_Sushi.jpg"
         },
         {
-          "dishName": "Veg Extravenza",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "dishName": "Narezushi",
+          "type": "Onion, Capcicum, Pipple",
+          "price": 11.22,
+          "receipe": "pizza, crust, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/04_Sushi.jpg"
         },
         {
-          "dishName": "Chicken feast",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "dishName": "Nigiri",
+          "type": "Onion, egg",
+          "price": 20.4,
+          "receipe": "pizza, crust, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/05_Sushi.jpg"
         },
         {
-          "dishName": "South East",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "dishName": "Oshizushi",
+          "type": "Vanila, Red chilli",
+          "price": 5.0,
+          "receipe": "pizza, crust, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/06_Sushi.jpg"
         },
         {
-          "dishName": "Italiana",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "dishName": "Sasazushi",
+          "type": "Peproni, cheese",
+          "price": 8.5,
+          "receipe": "pizza, crust, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/07_Sushi.jpg"
         },
         {
           "dishName": "Mexican",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "type": "cheese",
+          "price": 18.23,
+          "receipe": "pizza",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/08_Sushi.jpg"
         },
         {
-          "dishName": "Uncle's Sams",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "dishName": "Kakinoha-zushi.",
+          "type": "tomato, cheese",
+          "price": 12.34,
+          "receipe": "pizza, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/09_Sushi.jpg"
         },
         {
-          "dishName": "Double Delight",
-          "receipe": "Onion, tomato, cheese",
-          "price": 10,
-          "type": "pizza, crust, pan",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "dishName": "Inari-zushi",
+          "type": "Onion, cheese",
+          "price": 8.23,
+          "receipe": "pizza, crust, pan",
+          "thumbnailImage": "https://gurunavi.com/en/japanfoodie/article/types_of_sushi/img/10_Sushi.jpg"
         }
       ],
-      "available": true
+      "available": true,
+      "filters": ["Salmon", "Squid", "Tuna"]
     },
     {
       "category": "Drinks",
       "menuItems": [
         {
-          "dishName": "Coke",
+          "dishName": "Sunkist Pineapple",
           "receipe": "Soda",
-          "price": 10,
-          "type": "drink",
-          "thumbnailImage": "http://i.imgur.com/dsaf23"
+          "price": 2.99,
+          "type": "Carbonated Water, High Fructose Corn Syrup",
+          "thumbnailImage": "https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/07/sunkist-pineapple-soda.jpg"
         },
         {
-          "dishName": "Pepsi",
+          "dishName": "Crush Peach",
           "receipe": "Soda",
-          "price": 10,
-          "type": "drink",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
+          "price": 3.99,
+          "type": "Carbonated Water, High Fructose Corn Syrup, Citric Acid",
+          "thumbnailImage": "https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/07/grapefruit-crush-soda.jpg?w=1200&ssl=1"
         },
         {
-          "dishName": "Diet Coke",
+          "dishName": "Sunkist Fruit Punch",
           "receipe": "Soda",
-          "price": 10,
-          "type": "drink",
-          "thumbnailImage": "http://i.imgur.com/1adsfd"
-        }
+          "price": 5.99,
+          "type": " Carbonated Water, High Fructose Corn Syrup",
+          "thumbnailImage": "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2020/05/sunkist-fruit-punch.jpg?w=1200&ssl=1"
+        },
+        {
+          "dishName": "Fanta Pineapple",
+          "receipe": "Soda",
+          "price": 3.99,
+          "type": "High Fructose Corn Syrup, Citric Acid, Natural Flavors",
+          "thumbnailImage": "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2019/07/pineapple-fanta-soda.jpg?w=1200&ssl=1"
+        },
+        {
+          "dishName": "Fanta Mango",
+          "receipe": "Soda",
+          "price": 3.99,
+          "type": "High Fructose Corn Syrup, Natural Flavors, Citric Acid, Potassium Sorbate",
+          "thumbnailImage": "https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/07/mango-fanta-soda.jpg?w=1200&ssl=1"
+        },
+        {
+          "dishName": "Mug Cream Soda",
+          "receipe": "Soda",
+          "price": 3.99,
+          "type": "Carbonated Water, High Fructose Corn Syrup, Natural and Artificial Flavors",
+          "thumbnailImage": "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2019/07/mug-cream-soda.jpg?w=1200&ssl=1"
+        },
       ],
-      "available": true
+      "available": true,
+      "filters": ["Zero", "Lite"]
     }
   ]
 }

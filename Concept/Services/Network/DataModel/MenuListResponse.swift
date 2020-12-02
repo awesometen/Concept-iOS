@@ -33,6 +33,7 @@ struct MenuItemModel: Mappable {
   private(set) var category: String?
   private(set) var menuItems: [MenuItems]?
   private(set) var available: Bool?
+  private(set) var filters: [String]?
   
   init?(map: Map) { }
   
@@ -41,6 +42,7 @@ struct MenuItemModel: Mappable {
     category <- map["category"]
     menuItems <- map["menuItems"]
     available <- map["available"]
+    filters <- map["filters"]
   }
 }
 

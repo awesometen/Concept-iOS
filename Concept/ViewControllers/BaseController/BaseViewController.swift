@@ -24,9 +24,10 @@ class BaseViewController: PulleyViewController {
 
 extension BaseViewController: BaseControllerPresenterToView {
   func updatePulley(position: PulleyPosition) {
-    setDrawerPosition(position: .open, animated: true)
+    setDrawerPosition(position: position, animated: true)
   }
   
   func prepareForFullScreen(with topInsect: CGFloat) {
+    print(topInsect)
   }
 }

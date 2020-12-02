@@ -22,7 +22,7 @@ class MenuFiltersCollectionViewCell: UICollectionViewCell, GenericHeightCell {
     didSet {
       collectionView.registerReusableCell(cellType: MenuFiltersSubCollectionViewCell.self)
       let layout = UICollectionViewFlowLayout()
-      layout.itemSize = CGSize(width: 140, height: 46)
+      layout.itemSize = CGSize(width: 80, height: 46)
       layout.minimumInteritemSpacing = 2
       layout.scrollDirection = .vertical
       collectionView.collectionViewLayout = layout

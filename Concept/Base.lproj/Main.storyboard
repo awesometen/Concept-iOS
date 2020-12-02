@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,17 +34,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEs-xY-ja5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="3Pe-Lh-h4b"/>
+                                    <constraint firstAttribute="height" constant="450" id="3Pe-Lh-h4b"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V1a-S4-cQ3">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="baD-GW-Ejn"/>
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kozaro Delivery" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id9-GB-rVh">
@@ -55,6 +50,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ezk-J3-Ftu">
+                                <rect key="frame" x="145.5" y="390" width="123" height="28"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FV7-DL-qn3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,11 +62,14 @@
                             <constraint firstItem="id9-GB-rVh" firstAttribute="centerX" secondItem="FV7-DL-qn3" secondAttribute="centerX" id="72S-UU-daq"/>
                             <constraint firstItem="FV7-DL-qn3" firstAttribute="trailing" secondItem="UEs-xY-ja5" secondAttribute="trailing" id="A8p-oh-5NN"/>
                             <constraint firstItem="id9-GB-rVh" firstAttribute="top" secondItem="FV7-DL-qn3" secondAttribute="top" constant="28" id="bhx-SR-ONN"/>
+                            <constraint firstItem="Ezk-J3-Ftu" firstAttribute="bottom" secondItem="UEs-xY-ja5" secondAttribute="bottom" constant="-32" id="wuj-g6-G6x"/>
+                            <constraint firstItem="Ezk-J3-Ftu" firstAttribute="centerX" secondItem="UEs-xY-ja5" secondAttribute="centerX" id="zPB-f8-ZUi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="UEs-xY-ja5" id="YWe-uA-Ynb"/>
                         <outlet property="collectionViewHeight" destination="3Pe-Lh-h4b" id="RGJ-d1-1X6"/>
+                        <outlet property="pageControl" destination="Ezk-J3-Ftu" id="pmR-Ly-gHH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKm-vg-Udu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -78,29 +79,38 @@
         <!--Secondary View Controller-->
         <scene sceneID="A0Q-d9-7Tw">
             <objects>
-                <viewController storyboardIdentifier="SecondaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4XI-NG-t67" customClass="SecondaryViewController" customModule="Concept" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondaryViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4XI-NG-t67" customClass="SecondaryViewController" customModule="Concept" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u2W-Ll-IeA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-Ga-HBM">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-Ga-HBM">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5Zd-GX-ERp">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="UAh-EO-CAN"/>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trJ-FD-TIU">
+                                <rect key="frame" x="354" y="790" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="e6m-3P-uAI"/>
+                                    <constraint firstAttribute="width" constant="40" id="tPk-0f-Ytc"/>
+                                </constraints>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="cart.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dvj-a6-aZL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NsX-Ga-HBM" firstAttribute="top" secondItem="u2W-Ll-IeA" secondAttribute="top" id="HvG-bT-LWb"/>
+                            <constraint firstItem="Dvj-a6-aZL" firstAttribute="bottom" secondItem="trJ-FD-TIU" secondAttribute="bottomMargin" constant="50" id="IJo-xR-6j6"/>
                             <constraint firstItem="NsX-Ga-HBM" firstAttribute="leading" secondItem="Dvj-a6-aZL" secondAttribute="leading" id="VZA-TF-ze5"/>
                             <constraint firstAttribute="bottom" secondItem="NsX-Ga-HBM" secondAttribute="bottom" id="cIS-Fk-sKY"/>
+                            <constraint firstItem="Dvj-a6-aZL" firstAttribute="trailing" secondItem="trJ-FD-TIU" secondAttribute="trailing" constant="20" id="dDT-CR-nve"/>
                             <constraint firstItem="Dvj-a6-aZL" firstAttribute="trailing" secondItem="NsX-Ga-HBM" secondAttribute="trailing" id="xI4-fy-tWE"/>
                         </constraints>
                     </view>
@@ -114,14 +124,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
