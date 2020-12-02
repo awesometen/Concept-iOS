@@ -50,6 +50,5 @@ final class BorderedLabel: ConceptLabel {
     layer.borderWidth = 1.0
     layer.borderColor = UIColor.lightGray.cgColor
     layer.cornerRadius = frame.height/2
-    
   }
 }

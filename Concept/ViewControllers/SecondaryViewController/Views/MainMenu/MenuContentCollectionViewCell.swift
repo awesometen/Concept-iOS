@@ -17,6 +17,12 @@ struct MenuContentCollectionViewCellModel: MenuContentCollectionViewCellInterfac
   var menuItems: [MenuItems]
 }
 
+private extension String {
+  static var cellIdentifer = "MenuCollectionSubCollectionViewCell"
+}
+
+private let cellHeight: CGFloat = 450.0
+
 class MenuContentCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   
   @IBOutlet private weak var collectionViewHeightConstraint: NSLayoutConstraint!
@@ -25,7 +31,7 @@ class MenuContentCollectionViewCell: UICollectionViewCell, GenericHeightCell {
       collectionView.registerReusableCell(cellType: MenuCollectionSubCollectionViewCell.self)
       collectionView.contentInset = .zero
       let layout = UICollectionViewFlowLayout()
-      layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 450)
+      layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: cellHeight)
       layout.scrollDirection = .vertical
       collectionView.collectionViewLayout = layout
       collectionView.isScrollEnabled = false
@@ -48,7 +54,6 @@ class MenuContentCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     collectionViewHeightConstraint.constant = collectionView.contentSize.height
-//    cellModel?.updateHeight(collectionView.contentSize.height)
   }
   
   //MARK: Public properties
@@ -56,7 +61,7 @@ class MenuContentCollectionViewCell: UICollectionViewCell, GenericHeightCell {
     self.cellModel = cellModel
     collectionView.reloadData()
     let items = Observable.just(cellModel.menuItems)
-    let _ = items.bind(to: collectionView.rx.items(cellIdentifier: "MenuCollectionSubCollectionViewCell", cellType: MenuCollectionSubCollectionViewCell.self)) { (row, element, cell) in
+    let _ = items.bind(to: collectionView.rx.items(cellIdentifier: .cellIdentifer, cellType: MenuCollectionSubCollectionViewCell.self)) { (row, element, cell) in
       cell.configure(with: MenuCollectionSubCollectionViewCellModel(menu: element))
     }
   }

@@ -19,13 +19,16 @@ struct CurrentMenuSubCollectionViewCellModel: CurrentMenuSubCollectionViewCellIn
 
 class CurrentMenuSubCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   
+  //MARK: IBOutlet properties
   @IBOutlet private weak var titleLabel: UILabel!
   
+  //MARK: Life cycle methods
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
   }
   
+  //MARK: Public methods
   func configure(with cellModel: CurrentMenuSubCollectionViewCellInterface) {
     titleLabel.text = cellModel.title
     titleLabel.font = UIFont.boldSystemFont(ofSize: 32.0)

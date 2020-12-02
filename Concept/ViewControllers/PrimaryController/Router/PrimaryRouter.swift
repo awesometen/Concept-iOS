@@ -11,7 +11,7 @@ import UIKit
 class PrimaryRouter: PrimaryControllerPresenterToRouter {
 
   static func createModule() -> PrimaryViewController {
-    let viewController = mainstoryboard.instantiateViewController(withIdentifier: "PrimaryViewController") as! PrimaryViewController
+    let viewController = mainstoryboard.instantiateViewController(withIdentifier: Constants.ViewControllers.primary) as! PrimaryViewController
     let presenter: PrimaryControllerViewToPresenter & PrimaryControllerInteractorToPresenter   = PrimaryPresenter()
     let interactor: PrimaryControllerPresenterToInteractor = PrimaryInteractor()
     let router: PrimaryControllerPresenterToRouter = PrimaryRouter()

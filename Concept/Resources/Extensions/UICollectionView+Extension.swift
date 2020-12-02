@@ -2,8 +2,6 @@
 //  UICollectionView+Extension.swift
 //  Concept
 //
-//  Created by awesomej on 28/11/20.
-//
 
 import UIKit
 

@@ -17,8 +17,8 @@ class BaseViewRouter: BasePresenterToRouter {
   var secondaryController: SecondaryViewController!
   
   func createModule() -> BaseViewController {
-    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-    viewController = storyboard.instantiateViewController(withIdentifier: "BaseViewController") as? BaseViewController
+    let storyboard = UIStoryboard(name: Constants.StoryBoardName.main, bundle: Bundle.main)
+    viewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllers.base) as? BaseViewController
     presenter = BaseViewPresenter()
     router = BaseViewRouter()
     presenter.view = viewController

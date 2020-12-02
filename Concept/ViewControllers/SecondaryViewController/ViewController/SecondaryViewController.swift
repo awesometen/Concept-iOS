@@ -18,7 +18,7 @@ class SecondaryViewController: UIViewController {
   @IBOutlet private weak var mainMenuCollectionView: UICollectionView! {
     didSet {
       mainMenuCollectionView.registerReusableCell(cellType: MainContentHolderCollectionViewCell.self)
-      mainMenuCollectionView.contentInset = UIEdgeInsets(top: UIDevice.current.hasTopNotch ? 24 : 200, left: 0, bottom: 0, right: 0)
+      mainMenuCollectionView.contentInset = UIEdgeInsets(top: UIDevice.current.hasTopNotch ? 24 : 180, left: 0, bottom: 0, right: 0)
       let layout = CollectionCustomLayout()
       layout.scrollDirection = .horizontal
       layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 900)

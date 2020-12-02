@@ -27,7 +27,5 @@ extension BaseViewController: BaseControllerPresenterToView {
     setDrawerPosition(position: position, animated: true)
   }
   
-  func prepareForFullScreen(with topInsect: CGFloat) {
-    print(topInsect)
-  }
+  func prepareForFullScreen(with topInsect: CGFloat) {  }
 }

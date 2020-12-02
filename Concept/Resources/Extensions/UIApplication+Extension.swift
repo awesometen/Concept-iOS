@@ -30,7 +30,7 @@ extension UIApplication {
 extension UIDevice {
   var hasTopNotch: Bool {
     if #available(iOS 11.0, tvOS 11.0, *) {
-      return UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0 > 20
+      return UIApplication.shared.safeAreaTopPadding > 20
     }
     return false
   }

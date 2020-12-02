@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 protocol CouponsCollectionViewModelInterface {
   var title: String { get }
   var subTitle: String { get }

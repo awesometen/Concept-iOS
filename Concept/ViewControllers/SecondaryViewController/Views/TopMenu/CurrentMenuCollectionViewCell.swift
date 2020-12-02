@@ -18,13 +18,13 @@ struct CurrentMenuCollectionViewCellModel: CurrentMenuCollectionViewCellInterfac
   var selectedItem: String
 }
 
-
 private extension String {
   static let cellIdentifier = "CurrentMenuSubCollectionViewCell"
 }
 
 class CurrentMenuCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   
+  //MARK: IBOutlet propertie
   @IBOutlet private weak var collectionView: UICollectionView! {
     didSet {
       collectionView.registerReusableCell(cellType: CurrentMenuSubCollectionViewCell.self)
@@ -36,6 +36,7 @@ class CurrentMenuCollectionViewCell: UICollectionViewCell, GenericHeightCell {
     }
   }
   
+  //MARK: Lifecycle
   override func prepareForReuse() {
     super.prepareForReuse()
     collectionView.dataSource = nil
