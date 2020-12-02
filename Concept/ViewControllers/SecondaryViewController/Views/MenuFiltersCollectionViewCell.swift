@@ -16,6 +16,10 @@ struct MenuFiltersCollectionViewCellModel: MenuFiltersCollectionViewCellInterfac
   var availableFilter: [String]?
 }
 
+private extension String {
+  static var cellIdentifier = "MenuFiltersSubCollectionViewCell"
+}
+
 class MenuFiltersCollectionViewCell: UICollectionViewCell, GenericHeightCell {
   
   @IBOutlet private weak var collectionView: UICollectionView! {
@@ -47,7 +51,7 @@ class MenuFiltersCollectionViewCell: UICollectionViewCell, GenericHeightCell {
     collectionView.reloadData()
     guard let filters = self.cellModel?.availableFilter else { return }
     let items = Observable.just(filters)
-    let dispose = items.bind(to: collectionView.rx.items(cellIdentifier: "MenuFiltersSubCollectionViewCell", cellType: MenuFiltersSubCollectionViewCell.self)) { (row, element, cell) in
+    let _ = items.bind(to: collectionView.rx.items(cellIdentifier: .cellIdentifier, cellType: MenuFiltersSubCollectionViewCell.self)) { (row, element, cell) in
       cell.configure(with: MenuFiltersSubCollectionViewCellModel(title: element, isSelected: false))
     }
   }

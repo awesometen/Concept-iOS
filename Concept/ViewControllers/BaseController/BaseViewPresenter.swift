@@ -21,8 +21,7 @@ class BaseViewPresenter: BaseControllerViewToPresenter {
     view?.updatePulley(position: position)
   }
   
-  func prepareForFullScreen(with topInsect: CGFloat) {
-  }
+  func prepareForFullScreen(with topInsect: CGFloat) { }
 }
 
 

@@ -9,8 +9,7 @@ import UIKit
 
 class CollectionCustomLayout: UICollectionViewFlowLayout {
   fileprivate var bannerWidth: CGFloat {
-    let width = UIScreen.main.bounds.width - 24
-    return UIDevice.current.userInterfaceIdiom == .pad ? width / 2 : width
+    return UIScreen.main.bounds.width
   }
   
   //MARK: Private properties
@@ -28,12 +27,12 @@ class CollectionCustomLayout: UICollectionViewFlowLayout {
     self.minimumInteritemSpacing = 0
     self.minimumLineSpacing = 0
     self.scrollDirection = .horizontal
-    self.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    self.sectionInset = .zero
     self.collectionView?.decelerationRate = UIScrollView.DecelerationRate.fast
   }
   
   override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-    guard let collectionView = self.collectionView, UIDevice.current.userInterfaceIdiom != .pad else {
+    guard let collectionView = self.collectionView else {
       let latestOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
       return latestOffset
     }

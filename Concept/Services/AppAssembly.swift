@@ -10,8 +10,10 @@ import Moya
 
 class AppAssembly {
   
+  //MARK: Singleton
   static var shared: AppAssembly = AppAssembly()
   
+  //MARK: Private properties
   private(set) var provider: MoyaProvider<APIService>!
   
   init() {

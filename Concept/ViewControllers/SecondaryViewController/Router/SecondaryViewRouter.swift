@@ -9,7 +9,7 @@ import UIKit
 
 class SecondaryViewRouter: SecondaryPresenterToRouter {
   static func createModule() -> SecondaryViewController {
-    let viewController = mainstoryboard.instantiateViewController(withIdentifier: "SecondaryViewController") as! SecondaryViewController
+    let viewController = mainstoryboard.instantiateViewController(withIdentifier: Constants.ViewControllers.secondary) as! SecondaryViewController
     let presenter: SecondaryViewPresenter & SecondaryInteractorToPresenter = SecondaryViewPresenter()
     let interactor = SecondaryViewInteractor()
     let router: SecondaryPresenterToRouter = SecondaryViewRouter()
@@ -21,7 +21,5 @@ class SecondaryViewRouter: SecondaryPresenterToRouter {
     return viewController
   }
   
-  func moveToCart() {
-    
-  }
+  func moveToCart() { }
 }

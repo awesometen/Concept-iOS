@@ -106,12 +106,12 @@ extension MainContentHolderCollectionViewCell: UICollectionViewDelegateFlowLayou
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     switch indexPath.row {
     case 0:
-      return CGSize(width: UIScreen.main.bounds.width, height: 60)
+      return CGSize(width: UIScreen.main.bounds.width, height: .kTopCategoryMenuCellHeight)
     case 1:
-      return CGSize(width: UIScreen.main.bounds.width, height: 60)
+      return CGSize(width: UIScreen.main.bounds.width, height: .kFilterCellHeight)
     case 2:
       guard let items = cellModel?.menuItems.menuItems?.count else { return .zero }
-      let numberOfItems = CGFloat(items * 470)
+      let numberOfItems = CGFloat(items * Int(CGFloat.kMainContentCellHeight))
       return CGSize(width: UIScreen.main.bounds.width, height: numberOfItems + 120)
     default:
       return CGSize.zero

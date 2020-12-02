@@ -43,7 +43,7 @@ final class BuyButton: BaseConceptButton {
   
   @objc func onTap(_ sender: Any) {
     originalTitle = title(for: .normal)
-    setTitle("added +1", for: .normal)
+    setTitle(Constants.StringConstants.added, for: .normal)
     backgroundColor = .systemGreen
     perform(#selector(revert), with: self, afterDelay: 0.5)
   }

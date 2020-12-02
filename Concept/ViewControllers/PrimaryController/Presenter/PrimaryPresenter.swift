@@ -17,9 +17,7 @@ class PrimaryPresenter: PrimaryControllerViewToPresenter {
     interactor?.fetchData()
   }
   
-  func presentSecondaryController() {
-    
-  }
+  func presentSecondaryController() {}
 }
 
 
@@ -28,7 +26,5 @@ extension PrimaryPresenter: PrimaryControllerInteractorToPresenter {
     view?.offerList(array: data)
   }
   
-  func fetchOfferFailed(with error: Error) {
-    
-  }
+  func fetchOfferFailed(with error: Error) {}
 }

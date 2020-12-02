@@ -27,7 +27,5 @@ extension SecondaryViewPresenter: SecondaryInteractorToPresenter {
     view?.fetchedItems(menu: items)
   }
   
-  func fetchMenuItemFailed(with error: Error) {
-    print("HUGE FUCKING ERROR")
-  }
+  func fetchMenuItemFailed(with error: Error) {  }
 }
